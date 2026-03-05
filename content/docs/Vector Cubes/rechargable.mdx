@@ -1,0 +1,83 @@
+---
+title: Rechargable Mod
+description: Make vector and cozmo cubes rechargable!
+---
+
+<Callout title="Warning" type="warn">
+Lithium batteries can be dangerous if shorted or punctured. 
+Be careful when soldering and ensure the battery wires never touch each other.
+</Callout>
+
+-----------
+
+# Doing it the right way!
+Advanced, much more power efficent
+
+## What you need!
+- [TP4056/TP4057 3.7v Battery Charger (or any cheap 1S charger)](https://www.aliexpress.us/item/3256808124186675.html) - charges the battery
+- [a 3.3V Buck Boost (preferably the TPS63020)](https://www.aliexpress.us/item/3256807912901845.html) - regulates to VMAIN
+- [a small battery (eg. 601520 150mAh)](https://www.aliexpress.us/item/3256808756172134.html) - new battery
+
+## Preparing the battery
+1. get your soldering iron, battery, and battery charger 
+2. solder the red battery wire to B+
+3. solder the black battery wire to B-
+
+## Preparing the Buck Boost
+1. get your battery charger and buck boost converter
+2. solder the buck boost IN- to the battery charger's OUT-
+3. solder the buck boost IN+ to the battery charger's OUT+
+
+## Preparing the Cube
+1. remove the battery and battery door from the cube
+2. wedge something in between each corner of the top of the cube (where the lights are, i used guitar picks)
+3. remove the top of the cube from the main cube assembly
+4. clip each light tab to release the pcb from the top assembly
+
+## Finding the Boost
+This is the hard part, theres multiple revisions of cubes, you'll need to find yours, to simplify:
+1. find all the SOT-23-5 packages on the main pcb
+2. test each pin against the negative battery terminal with the cube powered via a benchtop psu
+3. find the out that reads 3.3V and the one that reads the bench voltage
+4. desolder the SOT, and solder a thin wire between the 2 pins
+5. congrats your cube now takes 3.3V 
+
+## Wiring into the cube
+1. get your buck boost
+2. desolder the 2 battery terminals (the pin and the spring)
+3. solder the buck's OUT- to where the spring terminal was 
+4. solder the buck's OUT+ to where the pin terminal was 
+5. place the battery, battery charger, and buck gently into the main cube assembly
+6. press the cube top back into the cube bottom
+
+-----------
+
+# Doing it the EASY way!
+
+## What you need!
+- [TP4056/TP4057 3.7v Battery Charger (or any cheap 1S charger)](https://www.aliexpress.us/item/3256808124186675.html) - charges the battery
+- [a 1.25-1.5V Buck Converter](https://www.aliexpress.us/item/3256809632990693.html) - regulates to the N Cell Voltage
+- [a small battery (eg. 601520 150mAh)](https://www.aliexpress.us/item/3256808756172134.html) - new battery
+
+## Preparing the battery
+1. get your soldering iron, battery, and battery charger 
+2. solder the red battery wire to B+
+3. solder the black battery wire to B-
+
+## Preparing the Buck
+1. get your battery charger and buck converter
+2. solder the 2 pads next to "1.5V" together
+3. solder the buck IN- to the battery charger's OUT-
+4. solder the buck IN+ to the battery charger's OUT+
+
+## Wiring it into the cube
+1. remove the battery and battery door from the cube
+2. wedge something in between each corner of the top of the cube (where the lights are, i used guitar picks)
+3. remove the top of the cube from the main cube assembly, and get your buck
+4. desolder the 2 battery terminals (the pin and the spring)
+5. solder the buck's OUT- to where the spring terminal was 
+6. solder the buck's OUT+ to where the pin terminal was 
+7. place the battery, battery charger, and buck gently into the main cube assembly
+8. press the cube top back into the cube bottom
+
+-----------
